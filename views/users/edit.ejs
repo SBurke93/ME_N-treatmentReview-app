@@ -1,0 +1,96 @@
+<% include ./partials/header %>
+
+
+
+<h1>Edit your Account</h1>
+<p>Create an account today and gain exclusive access to 
+  appointment scheduling, reviews and much, much more.</p>
+
+<br>
+<br>
+<div class="row">
+  <form action="/register" method="POST" class="col s12">
+
+  
+
+
+
+  <!--username-->  
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea" type="text" class="validate" name = "user[username]"></textarea>
+            <label for="textarea1">username</label>
+        </div>
+    </div>
+
+    <!--password-->                
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="textarea2" class="materialize-textarea"  type="password" name ="user[password]"></textarea>
+            <label for="textarea2">password</label>
+        </div>
+    </div>
+
+    <!--fname-->  
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea" type="text" class="validate" name = "user[firstName]"></textarea>
+            <label for="textarea1">first name</label>
+        </div>
+    </div>
+
+      <!--lname-->  
+      <div class="row">
+          <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea" type="text" class="validate" name = "user[lastName]"></textarea>
+              <label for="textarea1">last name</label>
+          </div>
+      </div>
+
+        <!--email-->  
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea" type="text" class="validate" name = "user[email]"></textarea>
+                <label for="textarea1">email</label>
+            </div>
+        </div>
+
+        <!--avatar-->  
+  <div class="row">
+      <div class="input-field col s12">
+          
+          <textarea id="textarea1" class="materialize-textarea" type="text" class="validate" name = "user[avatar]"></textarea>
+          <label for="textarea1">avatar url</label>
+      </div>
+  </div>
+
+
+
+
+
+    <!--submit btn-->
+    <div class="row">
+        <div class="input-field col s12">
+          <button class="btn waves-effect waves-light col s12">
+          <h6>Update</h6></button>
+        </div>
+      </div>
+     
+      </div>
+  
+
+
+
+
+
+
+
+
+
+  </form>  
+  </div>
+ 
+  
+
+
+<% include ./partials/footer %>

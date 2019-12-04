@@ -1,0 +1,44 @@
+<% include ./partials/header %>
+
+
+<i class="material-icons medium right" style="color:teal;">lock_open</i>
+<h1>Login Page</h1>
+
+<div class="row">
+        <form action="/LOGIN" method="POST" class="col s12">
+      
+        
+        <!--username-->  
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <textarea id="textarea1" class="materialize-textarea" type="text" class="validate" name = "username"></textarea>
+                    <label for="textarea1">Username</label>
+                </div>
+            </div>
+      
+      <!--password-->                
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">vpn_key</i>
+                    <input id="textarea2" class="materialize-textarea"  type="password" name ="password"></textarea>
+                    <label for="textarea2">Password</label>
+                </div>
+            </div>
+            
+      
+          <!--LOGIN btn-->
+          <div class="row">
+          
+                <button class="btn center-align waves-effect waves-light col s12">
+                Login</button>
+              
+               </div> 
+              
+        </form>  
+        </div>
+       
+
+
+
+<% include ./partials/footer %>

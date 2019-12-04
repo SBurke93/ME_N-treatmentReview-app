@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+
+
+<h1>Add New Review to <strong> <%= treatment.name %></strong></h1>
+
+
+<p>How did you feel after your <%= treatment.name %> treatment? Leave your honest opinions below. </p>
+
+
+<div class="row">
+    <form action="/treatments/<%= treatment._id %>/reviews" method="POST" class="col s12">
+
+ <!--desc-->
+ 
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">mode_comment</i>
+              <textarea id="icon_prefix2" class="materialize-textarea" name = "review[text]"></textarea>
+              <label for="icon_prefix2">your review goes here . . . </label>
+            </div>
+          </div>
+
+
+
+<!--submit btn-->
+        <div class="row">
+        <div class="input-field col s12">
+
+            <button class="btn primary waves-effect waves-light col s12" onclick="M.toast({html: 'Review Posted', classes: 'rounded', displayLength:'5000'})">
+            Submit</button>
+        </div>
+      </div>
+
+    </form>
+    <span style="float: right;"><a href="/treatments">Go Back</a></span>
+    </div>
+
+
+<% include ../partials/footer %>

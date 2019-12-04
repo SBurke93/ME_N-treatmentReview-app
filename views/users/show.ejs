@@ -1,0 +1,43 @@
+<% include ../partials/header %>
+
+  <!-- Page Layout here -->
+
+
+<h2><%= user.firstName  + " " + user.lastName%></h2>
+
+   <div class="row">
+
+
+        <ul class="collection z-depth-1">
+            <li class="collection-item avatar">
+              <img src="<%= user.avatar %>" alt="user profile image alt="" class="circle">
+              <span class="title">Usersname: <%= user.username %></span>
+              <p><p></p><br>
+                 Phone: 046 - 90 54373<br>
+                 email: <a href="mailto:<%= user.email %>"><%= user.email %> </a>
+
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+        </ul>
+
+      
+        <!-- <h3><%= user.username %>'s treatments:</h3>
+           <ul>
+               <% treatments.forEach(function(treatment){ %>
+                 <li><a href="/treatments/<%= treatment.id %>"><%= treatment.name %></a></li>
+                <%  }); %>
+              
+                <li> -->
+
+        <div class="right">
+            <a href="/user/edit">Edit Account</a>
+   
+      </div>
+
+
+
+
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,148 @@
+<% include ../partials/header %>
+
+  <!-- Page Layout here -->
+<div class="row">
+
+
+    <div class="col l7 push-l5 m12"style="padding-top:25px;">
+
+
+        <!--img-->
+        <img class="responsive-img z-depth-4" src="<%= treatment.image %>"
+            style="border-bottom: 5px solid #242424; position: centre;">
+        <!--info-->
+        <div class="row">
+        <div class="right"><h3 class="right-align">€<%= treatment.price %></h3></div>
+            <div class="left"><h3><%= treatment.name %></h3></div>
+            <div class="clearfix">
+            <p class="left">
+            <em>Published By: <a href="/users/<%= treatment.author.id %>"><%= treatment.author.username %></a>- <%= moment(treatment.createdAt).fromNow() %></em>
+            </p>
+           
+            </div>
+        </div>   
+
+        <div class="desc">
+            <p class="flow-text"><%= treatment.description %></p>  
+        </div>
+
+        <!--BTN-->
+         <% if(currentUser && treatment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+            <a class=" left waves-effect waves-light btn btn-small" href="/treatments/<%= treatment._id %>/edit">Edit</a>
+                <form action="/treatments/<%= treatment._id %>?_method=DELETE" method="POST">
+                    <button class="left btn-floating btn-small waves-effect waves-dark red waves-light" style="margin-left: 15px;">
+                        <i class="material-icons">delete</i>
+                    </button>
+                </form>
+        <% }%>
+
+
+        <div class="divider"></div>
+
+
+        <!-- REVIEWS -->
+        <div class="row">
+            <div class="col s6 offset-s6">  
+            </div>
+
+            <div class="reviews">
+                <div class="right" style="padding-top:8px; margin-top:30px;"> 
+                <a class="waves-effect waves-light btn deep-purple darken-2" 
+                href="/treatments/<%= treatment._id %>/reviews/new">Add New Review</a>
+                </div>
+                <div class="left">
+                <h4>Reviews</h4>
+                </div>
+                <div class="clearfix">
+                </div>
+            </div>
+        
+        </div>
+
+
+        <!--forEach REVIEW-->
+        <% treatment.reviews.forEach(function(review){ %>                
+            <div class="reviewBox col s12 z-depth-2">
+                <% if(currentUser && review.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+                    <form action="/treatments/<%= treatment._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                        <button class="right btn-floating btn-small waves-effect waves-dark red waves-light" style="margin-right: 8px; margin-bottom:10px; margin-left:10px;"><i class="material-icons">delete</i></button>
+                    </form> 
+                    <a class="right waves-effect waves-light btn btn-small deep-purple darken-2" 
+                    href="/treatments/<%= treatment._id %>/reviews/<%= review._id %>/edit">Edit</a>
+                <% }%>
+        <blockquote><p><%= review.author.username %> :</p></blockquote>
+                <p><%= review.text %></p>
+                <p class="right" style="font-size: small; padding-left: 10px; color:white;">
+                    <%= moment(review.createdAt).fromNow() %>
+                </p>
+
+            </div>
+        <% }); %>
+
+
+    </div>
+    <div class="divider"></div>
+
+        <!--map-->
+    <div class="col l5 pull-l7 s12">
+
+            <div class="row">
+                    <h4><strong>Information</strong></h4>
+                    <ul class="infoBox collapsible">
+                            <li>
+                              <div class="collapsible-header "><i class="material-icons">filter_drama</i>Benefits</div>
+                              <div class="collapsible-body dark-text"><span><%= treatment.benefits %></span></div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header "><i class="material-icons">content_copy</i>Category</div>
+                              <div class="collapsible-body"><span><%= treatment.cat %></span></div>
+                            </li>
+                            <li>
+                              <div class="collapsible-header "><i class="material-icons">timer</i>Duration</div>
+                              <div class="collapsible-body"><span><%= treatment.duration %> minutes</span></div>
+                            </li>
+                          </ul>
+        
+             </div>  
+
+
+
+             <div class="divider" style="margin-top:40px;"></div>
+
+
+
+            <h4><strong>Location</strong></h4>
+        <div class="deep-purple darken-1 card z-depth-3 hoverable map">
+       
+            <iframe width="100%" height="325px"  
+            src="https://maps.google.com/maps?width=100%&amp;height=325&amp;hl=en&amp;coord=53.73481457226425,
+            -6.71165943145752&amp;q=Wilkinstown+(Holistic%20Health%20and%20Massage%20Therapy)&amp;ie=UTF8&amp;t=h&amp;z=11&amp;iwloc=B&amp;output=embed"
+            style="padding-top:10px; margin-bottom:30px;" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.maps.ie/coordinates.html">
+            latitude longitude finder</a>
+            </iframe>
+        </div>
+
+     
+
+
+
+ 
+    </div>
+
+
+
+    <br>
+    <br>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<% include ../partials/footer %>

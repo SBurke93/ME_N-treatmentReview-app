@@ -1,0 +1,157 @@
+/*GENERAL*/
+body {
+    color: #222222;
+    background-color: white;
+}
+
+.container {
+    margin: 0 auto;
+    margin-top:12px;
+    max-width: 1900px;
+    width: 85%;
+    border-radius: 0px 0px 18px 18px;
+    background-color: rgb(235, 235, 235);
+    padding: 35px;
+
+  }
+
+  h1, h2, h3, h4, h5{
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+  }
+
+p {
+    font-family: 'Fauna One', serif;
+    font-size: 16px;
+    font-weight: 480;
+    color: #222222;
+    line-height: 26px;
+}
+ .brand-logo{
+    
+    font-size: 28px;
+    font-weight: 600;
+    margin-left: 10px;
+ }
+
+/*TREATMENT CARD */
+.card {
+    border-radius:10px;
+    
+    padding-bottom:20px;
+}
+
+/*HEADER*/
+#nav-mobile a{
+    font-weight: 500;
+    color: white;
+    font-size: 16px;
+    letter-spacing:1.3px;
+   
+}
+
+/*SHOW*/
+.activator img {
+    max-height:300px;
+} 
+
+
+/*INDEX*/
+
+#indexBtn {
+    border-radius: 8px;
+    padding: 0 33px 0 33px;
+    color:#fff;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing:1.2px;
+}
+
+
+
+
+/*FOOTER*/
+.footer {
+    background-color:#074A43;
+    margin-top: 185px;
+    padding: 20px;
+    padding-top:130px;
+}
+
+.map {
+    margin-top: 25px;
+   color:#fff;
+   padding: 20px;
+   
+
+  }
+
+.collapsible-header {
+
+    color:#fff;
+    background-color: #89d8d3;
+    background-image: linear-gradient(315deg, #00a8a0 0%, #009688 34%);
+
+}
+
+.card-title {
+    font-weight: 400;
+}
+
+/*
+
+@media (prefers-color-scheme: dark) 
+{
+	body {
+        background-color: #262626;
+        color: white;
+        line-height: 26px;
+	}
+}
+*/
+
+/*REVIEW*/
+.reviewBox {
+
+    margin-bottom: 12px;
+    padding:16px ;
+    border-radius: 8px;
+    background-color: #89d8d3;
+    background-image: linear-gradient(315deg, #00a8a0 0%, #009688 34%);
+}
+.reviewBox p {
+    font-size :18px;
+    font-weight: 500;
+    
+    color: #fff;
+}
+
+
+#delete-review {
+    display: inline;
+}
+
+
+
+/*ERROR HANDLING*/
+#errorMsg {
+    margin-left: 8%;
+    text-decoration: underline;
+    line-height: 10px;
+    
+}
+
+#successMsg {
+    margin-left: 8%;
+    text-decoration: underline;
+    line-height: 10px;
+}
+
+
+.infoBox {
+    width:90%; 
+    margin: auto;
+    margin-top: 20px;
+
+
+}

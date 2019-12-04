@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!-- IMPORT RELEVENT ASSETS -->
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Important Materialize.css-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+        <!--Linking main CSS-->
+        <link href="/stylesheets/main.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fauna+One&display=swap" rel="stylesheet">
+        <link rel="icon" href="https://www.pngkey.com/png/full/265-2656804_massage-icon-png-for-kids-icon-for-massage.png" type="image/gif" sizes="16x16">
+      <title>The Wellness App</title>
+
+</head>
+<body>
+
+<!--NAV-->
+    <nav class="nav-extended">
+          <div class="nav-wrapper teal">
+        <a href="/" class="brand-logo">Wellness App</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+            <i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <% if(!currentUser){ %>
+              <li><a href="/register">REGISTER</a></li>
+              <li><a href="/login">LOGIN</a></li>
+            <%  } else { %>
+
+              <li><i class="medium material-icons">verified_user</i></li>
+              <li>
+                <a href="#">Signed in as:  <%= currentUser.username %></a></li>
+              <li><a href="/logout">LOGOUT</a></li>
+              <% } %>
+            </ul>
+          </div>
+
+
+          <div class="nav-content teal">
+            <ul class="tabs tabs-transparent">
+              <li class="tab bold hoverable z-depth-2">
+                <a href="/">
+                <i class="large material-icons">home</i>
+              </a>
+            </li>
+
+              <li class="tab hoverable z-depth-2 deep-purple darken-2">
+                <a class="/" href="/treatments">
+                  <i class="large material-icons">nature_people</i>
+                </a>
+            </li>
+              
+              <li class="tab hoverable z-depth-2 ">
+                <a href="/location">
+                  <i class="large material-icons">location_on</i>
+                </a>
+            </li>
+
+              <li class="tab hoverable z-depth-2 deep-purple darken-2">
+                <a href="/opening">
+                <i class="large material-icons">access_time</i>
+                </a>
+            </li>
+              
+              <li class="tab hoverable z-depth-1">
+                <a href="/contact">
+                <i class="large material-icons">phone</i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+      </nav>
+
+
+
+      <!--HAM-->
+        <ul class="sidenav" id="mobile-demo">
+          <% if(!currentUser){ %>
+            <li><a href="/register">Register</a></li>
+            <li><a href="/login">Login</a></li>
+          <%  } else { %>
+            <li><i class="small material-icons" style="padding:29px 0 0 25px; color:teal;">verified_user</i></li>
+            <li><a href="#">Signed in as <%= currentUser.username %></a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li>
+
+            <div class="row" id="topbarsearch">  
+                <form action="/treatments" method="GET" class="">
+                  <div class="input-field col s6 s12 red-text">
+                        <i class="deep-purple-text material-icons prefix">search</i>
+                        <input type="text" placeholder="search treatments..." id="autocomplete-input" name="search" class="autocomplete dark-text" >
+            
+                        <button class=" right btn btn-small waves-effect waves-light deep-purple darken-2" type="submit" name="action">Search
+                          </button>
+                        </div>
+                  
+                </form>
+             </div>
+            </li>
+
+
+         
+          <% } %>
+
+        </ul>
+        
+             
+<!-- END OF NAVIGATION LOGIC -->
+
+
+
+
+
+<!--ERROR HANDLING-->
+
+<!--ERROR BOX -->
+<% if(error && error.length > 0){ %>
+<div class="row" id="errorMsg">
+  <div class="col s11 center">
+    <div class="card  red darken-2">
+    <div class="card-content white-text" style="margin-top:5px;">
+        
+      <h5 class=" white-text"><%= error %></h5>
+    </div>
+   </div>
+  </div>
+</div>
+<% } %>
+
+<!--SUCCESS BOX -->
+<% if(success && success.length > 0){ %>
+<div class="row" id="successMsg">
+  <div class="col s11 center">
+    <div class="card teal lighten-2">
+    <div class="card-content white-text" style="margin-top:5px;">
+        
+  <p class=" white-text"><%= success %></p>
+    </div>
+   </div>
+  </div>
+</div>
+<% } %>
+
+
+
+<!--Start of body container-->
+<div class="container z-depth-2">

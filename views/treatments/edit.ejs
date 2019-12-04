@@ -1,0 +1,89 @@
+
+<% include ../partials/header %>
+
+
+
+
+
+
+<h1>Edit <%= treatment.name %></h1>
+<p>Edit title, image and description of the chosen treatment.</p>
+<br><br>
+
+
+
+<div class="row">
+    <form action="/treatments/<%= treatment._id %>?_method=PUT" method="POST" class="col s12">
+
+<!--name-->
+        <div class="form-group">
+            <label for="treatment[name]">Name</label>
+            <input class="form-control" type="text" name="treatment[name]" value="<%= treatment.name %>">
+        </div>
+<!--price-->
+        <div class="form-group">
+                <label for="treatment[price]">Price</label>
+            <input class="form-control" type="number" name="treatment[price]" type="number" min="0.01" step="0.01"value="<%= treatment.price %>">
+        </div>
+
+<!--duration-->  
+    <div class="form-group">
+            <label for="treatment[duration]">Duration</label>
+        <input class="form-control"  name="treatment[duration]" type="number" min="0.01" step="0.01" value="<%= treatment.duration %>">
+    </div>
+<!--image-->
+        <div class="form-group">
+                <label for="treatment[image]">Image url</label>
+            <input class="form-control" type="text" name="treatment[image]" value="<%= treatment.image %>">
+        </div>
+<!--benefits--> 
+        <div class="form-group">
+                <label for="treatment[benefits]">Benefits</label>
+                <input class="form-control" type="text" name="treatment[benefits]" value="<%= treatment.benefits %>">
+            </div>
+<!--cat--> 
+        <div class="form-group">
+                <label for="treatment[cat]">Cateogry</label>
+                <input class="form-control" type="text" name="treatment[cat]" value="<%= treatment.cat %>">
+            </div>
+<!--description-->
+        <div class="form-group">
+                <label for="treatment[description]">Description</label>
+            <input class="form-control" type="text" name="treatment[description]" value="<%= treatment.description %>">
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+        </div>
+
+    </form>
+    
+    <div class="right">
+        <a href="/treatments">Go Back</a>
+    </div>
+    
+</div>
+</div>
+    
+<!-- 
+
+    <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+    </div>
+
+    
+    <div class="row">
+        <div class="input-field col s12">
+          <input placeholder="Placeholder" id="first_name" type="text" name = "treatment[name]" class="validate">
+          <label for="first_name">Name</label>
+        </div>
+    </div>
+ -->
+
+
+
+
+<% include ../partials/footer %>

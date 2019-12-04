@@ -1,0 +1,106 @@
+<% include ./partials/header %>
+
+
+<i class="material-icons medium right" style="color:teal;">lock_open</i>
+<h1>Create New Account</h1>
+<p>Create an account today and gain exclusive access to 
+  appointment scheduling, reviews and much, much more.</p>
+
+<br>
+<br>
+<div class="row">
+  <form action="/register" method="POST" class="col s12">
+
+  
+
+
+
+  <!--username-->  
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea" type="text" class="validate" name = "username"></textarea>
+            <label for="textarea1">username</label>
+        </div>
+    </div>
+
+    <!--password-->                
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="textarea2" class="materialize-textarea"  type="password" name ="password"></textarea>
+            <label for="textarea2">password</label>
+        </div>
+    </div>
+
+    <!--fname-->  
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea" type="text" class="validate" name = "firstName"></textarea>
+            <label for="textarea1">first name</label>
+        </div>
+    </div>
+
+      <!--lname-->  
+      <div class="row">
+          <div class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea" type="text" class="validate" name = "lastName"></textarea>
+              <label for="textarea1">last name</label>
+          </div>
+      </div>
+
+        <!--email-->  
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea" type="text" class="validate" name = "email"></textarea>
+                <label for="textarea1">email</label>
+            </div>
+        </div>
+
+        <!--avatar-->  
+  <div class="row">
+      <div class="input-field col s12">
+          
+          <textarea id="textarea1" class="materialize-textarea" type="text" class="validate" name = "avatar"></textarea>
+          <label for="textarea1">avatar url</label>
+      </div>
+  </div>
+
+
+<!--Admin access-->
+<div class="row">
+  <div class="input-field col s12">
+      <i class="material-icons prefix">portrait</i>
+      <textarea id="textarea1" class="materialize-textarea" type="text" data-length="28"class="validate" name = "adminCode"></textarea>
+      <label for="textarea1">admin code</label>
+  </div>
+</div>
+
+
+    <!--submit btn-->
+    <div class="row">
+        <div class="input-field col s12">
+          <button class="btn waves-effect waves-light col s12">
+          <h6>Create Account</h6></button>
+        </div>
+      </div>
+      <div class="row">
+          <div class="right">
+              <a href="/login">Already have an account? Login here</a>
+          </div>
+      </div>
+  
+
+
+
+
+
+
+
+
+
+  </form>  
+  </div>
+ 
+  
+
+
+<% include ./partials/footer %>

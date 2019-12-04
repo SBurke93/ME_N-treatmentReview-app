@@ -1,0 +1,88 @@
+
+<% include ../partials/header %>
+
+
+
+<h1>Create New Treatment</h1>
+<p>Add title name and url image to create a new treatment for the Centre.</p>
+
+
+<div class="row">
+    <form action="/treatments" method="POST" class="col s12">
+
+<!--name-->  
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea" name ="name"></textarea>
+                <label for="textarea1">Name</label>
+            </div>
+        </div>
+
+    <!--price-->  
+    <div class="form-group">
+            <label for="price">Price</label>
+        <input class="form-control"  name="price" type="number" min="0.01" step="0.01">
+    </div>
+<!--img-->                
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea2" class="materialize-textarea"  name = "image"></textarea>
+                <label for="textarea2">Image URL</label>
+            </div>
+        </div>
+
+        
+    <!--duration-->  
+    <div class="form-group">
+            <label for="duration">Duration</label>
+        <input class="form-control"  name="duration" type="number" min="0.01" step="0.01">
+    </div>
+
+<!--benefits-->          
+<div class="row">
+        <div class="input-field col s12">
+            <textarea id="textarea3" class="materialize-textarea"  name = "benefits"></textarea>
+            <label for="textarea3">Benefits</label>
+        </div>
+        </div>
+
+
+<!--cat-->          
+<div class="row">
+        <div class="input-field col s12">
+            <textarea id="textarea3" class="materialize-textarea"  name ="cat"></textarea>
+            <label for="textarea3">Category</label>
+        </div>
+        </div>
+
+
+<!--desc-->          
+         <div class="row">
+            <div class="input-field col s12">
+              <textarea id="textarea3" class="materialize-textarea"  name = "description"></textarea>
+              <label for="textarea3">Description</label>
+            </div>
+          </div>
+          
+
+<!--submit btn-->
+        <div class="row">
+        <div class="input-field col s12">
+
+            <button class="btn  primary waves-effect waves-light col s12">
+            <h6>Create Treatment</h6></button>
+        </div>
+      </div>
+
+    </form>
+    <a class=" right red lighten-1 waves-effect waves-light btn-small" href="/treatments"><i class="material-icons left">cancel</i>Cancel</a>
+  
+    </div>
+
+            
+
+
+
+
+
+<% include ../partials/footer %>

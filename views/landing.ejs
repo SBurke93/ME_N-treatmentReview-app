@@ -1,0 +1,60 @@
+
+<% include partials/header %>
+
+    <i class="material-icons medium right" style="color:teal;">home</i>
+
+    <h1> Welcome to Your Wellness Review App</h1>
+        <p>The landing page will allow you to search for your favourite treatments or navigate to any area of the application.  </p>
+        <a class="waves-effect waves-light btn z-depth-2"href="/treatments">View Treatments</a>
+        <a class="blue lighten-1 waves-effect waves-dark btn z-depth-3"href="/register">Register</a>
+      
+        <br>
+        <br>
+
+        <div class="row" id="topbarsearch">  
+                <form action="/treatments" method="GET" class="">
+                   <div class="input-field col s6 s12 red-text">
+                        <i class="deep-purple-text material-icons prefix">search</i>
+                        <input type="text" placeholder="search treatments..." id="autocomplete-input" name="search" class="autocomplete dark-text" >
+            
+                        <button class=" right btn waves-effect waves-light z-depth-2" type="submit" name="action">Search
+                            
+                        </div>
+                   
+                </form>
+            </div>
+                  
+
+        <!--fullscreen  slider by MaterializeCss-->
+        <div class="slider" style="height: 500px;">
+                <ul class="slides">
+                    <li>
+                    <img src="https://images.pexels.com/photos/556663/pexels-photo-556663.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"> <!-- random image -->
+                    <div class="caption center-align">
+                            <h3>Blossom into a new YOU!</h3>
+                            <h5 class="dark-text text-lighten-3">Our treatments can heal your worries.</h5>
+                            
+                    </div>
+                    </li>
+                    <li>
+                    <img src="https://images.pexels.com/photos/359564/pexels-photo-359564.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"> <!-- random image -->
+                    <div class="caption left-align">
+                            <h3>Why not avail of some of our amazing services</h3>
+                            <h5 class="dark-text ">- Sweedish Massage <br> - Aromatherapy Massage  <br> - Hot Stone Massage <br> - Reiki</h5>
+    
+
+                    </div>
+                    </li>
+                    <li>
+                    <img src="https://images.unsplash.com/photo-1489659639091-8b687bc4386e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80"> <!-- random image -->
+                    <div class="caption right-align">
+                            <h3>Let us take you to Paradise</h3>
+                            <h5 class="light dark-text text-lighten-3">Take a deep breath and to leave your worries and stress at the door </h5>
+                        
+                    </div>
+                    </li>
+                </ul>
+                </div>
+            </div>
+
+<% include partials/footer %>

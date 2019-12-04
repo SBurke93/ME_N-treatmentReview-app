@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<table class="highlight">
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Duration</th>
+              <th>Price</th>
+          </tr>
+        </thead>
+
+
+
+        <tbody>
+        
+      <% treatments.forEach(function(treatment){ %>
+          <tr>
+            <td><%= treatment.name %></td>
+            <td><%= treatment.duration %></td>
+            <td>€<%= treatment.price %></td>
+          </tr>
+      <% }); %>
+        </tbody>
+</table>
+
+<% include ../partials/footer %>
